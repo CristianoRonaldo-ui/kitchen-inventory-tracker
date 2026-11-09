@@ -35,4 +35,21 @@ public class KitchenInventory {
         }
         stock.put(item, current - amount);
     }
+
+    public void printLowStockReport(int threshold) {
+        System.out.println("Low stock items (below " + threshold + "):");
+        boolean found = false;
+
+        for (String item : stock.keySet()) {
+            int quantity = stock.get(item);
+            if (quantity < threshold) {
+                System.out.println("  - " + item + ": " + quantity);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("  (none)");
+        }
+    }
 }

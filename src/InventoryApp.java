@@ -27,5 +27,7 @@ public class InventoryApp {
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
+        System.out.println();
+        inventory.printLowStockReport(10);
     }
 }
